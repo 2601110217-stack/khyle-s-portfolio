@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khyle C. Taghap | Certificates</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- TOP NAVIGATION -->
+    <header class="topbar">
+
+        <a href="index.html" class="logo">
+            <span class="logo-square"></span>
+            KHYLE.C
+        </a>
+
+        <div class="system-info">
+            <span>IT.STUDENT</span>
+            <span>WEB.DEV</span>
+            <span>PHILIPPINES</span>
+        </div>
+
+        <nav class="top-nav">
+            <a href="index.html">HOME ↗</a>
+
+            <button type="button" id="theme-toggle" class="theme-toggle">
+                ☀ LIGHT MODE
+            </button>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <!-- CERTIFICATES SECTION -->
+        <section class="content-section certificate-page">
+
+            <div class="section-number">08 / ACHIEVEMENTS</div>
+
+            <h2>My <span>Certificates.</span></h2>
+
+            <p class="certificate-intro">
+                A collection of my certificates, achievements,
+                and completed learning activities.
+            </p>
+
+            <div class="certificate-container">
+
+                <!-- CERTIFICATE 1 -->
+                <div class="certificate-card">
+
+                    <span class="project-tag">01 / HTML</span>
+
+                    <h3>HTML Certificate</h3>
+
+                    <img src="assets/HTML.jpg" alt="HTML Certificate">
+
+                    <p>Year: 2026</p>
+
+                </div>
+
+                <!-- CERTIFICATE 2 -->
+                <div class="certificate-card">
+
+                    <span class="project-tag">02 / CSS</span>
+
+                    <h3>CSS Certificate</h3>
+
+                    <img src="assets/CSS.png" alt="CSS Certificate">
+
+                    <p>Year: 2026</p>
+
+                </div>
+
+            </div>
+
+            <a href="index.html" class="outline-button">
+                ← BACK TO HOME
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>KHYLE C. TAGHAP</p>
+        <p>DESIGNED AND DEVELOPED BY ME © 2026</p>
+    </footer>
+
+    <!-- DARK / LIGHT MODE SCRIPT -->
+    <script>
+
+        const themeToggle = document.getElementById("theme-toggle");
+
+        let savedTheme = localStorage.getItem("website-theme");
+
+        if (!savedTheme) {
+            savedTheme = "dark";
+        }
+
+        function applyTheme(theme) {
+
+            if (theme === "light") {
+
+                document.body.classList.add("light-mode");
+                themeToggle.textContent = "☾ DARK MODE";
+
+            } else {
+
+                document.body.classList.remove("light-mode");
+                themeToggle.textContent = "☀ LIGHT MODE";
+
+            }
+
+            localStorage.setItem("website-theme", theme);
+
+        }
+
+        applyTheme(savedTheme);
+
+        themeToggle.addEventListener("click", function () {
+
+            const isLightMode =
+                document.body.classList.contains("light-mode");
+
+            applyTheme(isLightMode ? "dark" : "light");
+
+        });
+
+    </script>
+
+</body>
+
+</html>
